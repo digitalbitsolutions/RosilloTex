@@ -32,6 +32,7 @@ Este repositorio arranca con blueprint + plan operativo para construir:
 - `docs/TASKS.md`: backlog inicial.
 - `docs/MCP.md`: estrategia MCP.
 - `docs/LOCAL-SETUP.md`: arranque local paso a paso.
+- `docs/START-HERE.md`: reentrada rapida.
 - `docker-compose.yml`: stack local de backend.
 - `docker/.env.example`: variables para Docker.
 - `scripts/`: utilidades de arranque local.
@@ -66,12 +67,19 @@ Copy-Item docker/.env.example docker/.env
 .\scripts\dev-logs.ps1 wordpress
 ```
 
+6. Arranque de sesion recomendado (preflight + backend):
+
+```powershell
+.\scripts\session-start.ps1
+```
+
 ## Documentacion clave
 
 - Blueprint tecnico: `docs/BLUEPRINT.md`
 - Setup local: `docs/LOCAL-SETUP.md`
 - Backlog operativo: `docs/TASKS.md`
-- Delegacion de trabajo: `docs/JOB.md` y `scripts/delegate-job.ps1`
+- Reentrada rapida: `docs/START-HERE.md`
+- Delegacion de trabajo: `docs/JOB.md`, `docs/JOB-Sprint1.md` y `scripts/delegate-job.ps1`
 
 ## Delegar a un agente (async)
 
@@ -83,6 +91,14 @@ Copy-Item docker/.env.example docker/.env
   -AgentCommand "agent run --cwd d:\Meeguel\rosillotex --prompt-file docs/JOB.md --no-questions" `
   -WebhookUrl "https://hooks.slack.com/services/XXX/YYY/ZZZ"
 ```
+
+Atajo para Sprint 1:
+
+```powershell
+.\scripts\delegate-sprint1.ps1 -WebhookUrl "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+```
+
+Nota: si tu ejecutable no se llama `agent`, reemplaza el comando en `scripts/delegate-sprint1.ps1`.
 
 3. Revisa resultados:
 

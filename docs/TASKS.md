@@ -6,6 +6,8 @@
 - [x] Crear variables de entorno Docker (`docker/.env.example`).
 - [x] Crear scripts de operacion (`dev-up`, `dev-down`, `dev-logs`, `wp`).
 - [x] Documentar setup local en `docs/LOCAL-SETUP.md`.
+- [x] Crear scripts de reentrada (`preflight`, `session-start`, `session-stop`).
+- [x] Crear guia de reentrada en `docs/START-HERE.md`.
 - [ ] Levantar stack local y completar instalacion inicial de WordPress.
 - [ ] Instalar plugins base: ACF, CPT UI, SEO plugin.
 

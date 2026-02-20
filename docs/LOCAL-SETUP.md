@@ -52,6 +52,18 @@ Usa el wrapper:
 
 ## 5) Operacion diaria
 
+- Preflight rapido de entorno:
+
+```powershell
+.\scripts\preflight.ps1
+```
+
+- Arranque recomendado de sesion:
+
+```powershell
+.\scripts\session-start.ps1
+```
+
 - Ver logs:
 
 ```powershell
@@ -68,6 +80,12 @@ Usa el wrapper:
 
 ```powershell
 .\scripts\dev-down.ps1
+```
+
+- Cierre de sesion recomendado:
+
+```powershell
+.\scripts\session-stop.ps1
 ```
 
 - Parar y borrar volumenes (reset total):
