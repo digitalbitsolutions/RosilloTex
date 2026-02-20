@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "d:\\Meeguel\\rosillotex"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "d:\\Meeguel\\rosillotex"
+      ]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ]
+    },
+    "wordpress_api": {
+      "command": "node",
+      "args": [
+        "scripts/mcp-wordpress-proxy.js"
+      ],
+      "env": {
+        "WP_BASE_URL": "http://localhost:18080",
+        "WP_USERNAME": "replace_me",
+        "WP_APP_PASSWORD": "replace_me"
+      }
+    }
+  }
+}

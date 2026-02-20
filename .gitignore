@@ -1,0 +1,28 @@
+# Node
+node_modules/
+npm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+
+# Env
+.env
+.env.local
+docker/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build output
+dist/
+.astro/
+
+# Docker
+*.pid
+
+# Runtime reports
+reports/

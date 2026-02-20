@@ -1,0 +1,59 @@
+# Backlog Inicial de Tareas
+
+## Bloque Local Dev (nuevo)
+
+- [x] Crear backend dockerizado con Docker Desktop (`docker-compose.yml`).
+- [x] Crear variables de entorno Docker (`docker/.env.example`).
+- [x] Crear scripts de operacion (`dev-up`, `dev-down`, `dev-logs`, `wp`).
+- [x] Documentar setup local en `docs/LOCAL-SETUP.md`.
+- [ ] Levantar stack local y completar instalacion inicial de WordPress.
+- [ ] Instalar plugins base: ACF, CPT UI, SEO plugin.
+
+## Prioridad P0 (arranque obligatorio)
+
+- [ ] Definir dominios finales y proveedor DNS/CDN.
+- [ ] Provisionar WordPress en `cms`.
+- [ ] Endurecer seguridad base de WordPress (MFA, roles, backups).
+- [ ] Inicializar proyecto Astro 6 + TypeScript.
+- [ ] Configurar Tailwind + sistema de tokens.
+- [ ] Definir layout base y componentes globales (header, footer, CTA).
+- [ ] Crear integración Astro -> WordPress REST API.
+- [ ] Crear páginas MVP: Home, Servicios, Industrias, Contacto.
+- [ ] Implementar listado y detalle de blog desde WordPress.
+- [ ] Configurar sitemap, robots, canonical y OG tags.
+- [ ] Configurar formulario de contacto con tracking de conversiones.
+- [ ] Configurar CI con lint/build en pull requests.
+
+## Prioridad P1 (optimización y crecimiento)
+
+- [ ] Modelar CPT `Case Study` y `Service`.
+- [ ] Construir páginas de casos de éxito dinámicas.
+- [ ] Integrar Search Console + GA4 + Tag Manager.
+- [ ] Diseñar cluster de contenidos SEO por industria.
+- [ ] Implementar lead routing hacia CRM.
+- [ ] Crear landing local Miami + variantes por industria.
+- [ ] Mejorar CWV en mobile con presupuesto de performance.
+
+## Prioridad P2 (pre-ecommerce)
+
+- [ ] Instalar WooCommerce en entorno staging.
+- [ ] Definir esquema de productos y variaciones.
+- [ ] Exponer endpoints necesarios para catálogo.
+- [ ] Crear páginas de catálogo y detalle de producto en Astro.
+- [ ] Definir reglas de pricing (B2B tiers si aplica).
+
+## Prioridad P3 (marketplace completo)
+
+- [ ] Implementar carrito con Store API.
+- [ ] Implementar checkout y pagos.
+- [ ] Configurar impuestos y envíos.
+- [ ] Implementar emails transaccionales.
+- [ ] Implementar panel interno básico para soporte de pedidos.
+
+## Definición de terminado (DoD)
+
+- Código en rama con PR revisado.
+- Build y lint en verde.
+- QA funcional validado.
+- Métricas y tracking verificados.
+- Documentación mínima actualizada.
