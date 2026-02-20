@@ -98,7 +98,11 @@ Atajo para Sprint 1:
 .\scripts\delegate-sprint1.ps1 -WebhookUrl "https://hooks.slack.com/services/XXX/YYY/ZZZ"
 ```
 
-Nota: si tu ejecutable no se llama `agent`, reemplaza el comando en `scripts/delegate-sprint1.ps1`.
+Si tu ejecutable no se llama `agent`:
+
+```powershell
+.\scripts\delegate-sprint1.ps1 -AgentExecutable "codex" -WebhookUrl "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+```
 
 3. Revisa resultados:
 

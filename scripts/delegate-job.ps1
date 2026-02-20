@@ -6,7 +6,9 @@ param(
   [Parameter(Mandatory = $false)]
   [string]$WebhookUrl = "",
   [Parameter(Mandatory = $false)]
-  [string]$LogFile = "reports/job-run.log"
+  [string]$LogFile = "reports/job-run.log",
+  [Parameter(Mandatory = $false)]
+  [switch]$SkipCommandCheck
 )
 
 $ErrorActionPreference = "Stop"
@@ -27,7 +29,21 @@ $startedAt = Get-Date
 $message = ""
 
 try {
-  $jobText = Get-Content $JobFile -Raw
+  if (-not $SkipCommandCheck) {
+    $trimmed = $AgentCommand.Trim()
+    $firstToken = ""
+    if ($trimmed.StartsWith('"')) {
+      $firstToken = ($trimmed -split '"')[1]
+    }
+    else {
+      $firstToken = ($trimmed -split "\s+")[0]
+    }
+
+    if ($firstToken -and -not (Get-Command $firstToken -ErrorAction SilentlyContinue)) {
+      throw "No se encontro el ejecutable del agente: $firstToken. Ajusta -AgentCommand."
+    }
+  }
+
   "[$(Get-Date -Format s)] Starting delegated job using: $JobFile" | Tee-Object -FilePath $LogFile -Append
   "[$(Get-Date -Format s)] Agent command: $AgentCommand" | Tee-Object -FilePath $LogFile -Append
 

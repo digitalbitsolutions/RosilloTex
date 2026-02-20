@@ -42,6 +42,12 @@ npm run dev
 
 Si tu CLI de agente usa otro nombre, cambia `agent` por el ejecutable real.
 
+Ejemplo:
+
+```powershell
+.\scripts\delegate-sprint1.ps1 -AgentExecutable "codex" -WebhookUrl "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+```
+
 ## 5) Cerrar sesion
 
 ```powershell
