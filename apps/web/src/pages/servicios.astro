@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const coreServices = [
+	{
+		name: "Logo Embroidery",
+		desc: "Precision embroidery for polos, jackets, caps, and work uniforms with durable thread and clean finishing.",
+		image: "/images/service-embroidery.jpg",
+		alt: "Embroidery machine stitching logo on blue fabric",
+		items: ["Corporate uniforms", "School uniforms", "Caps and outerwear", "Name personalization"]
+	},
+	{
+		name: "Screen Printing",
+		desc: "High-impact prints for campaigns, school promotions, events, and bulk team apparel projects.",
+		image: "/images/service-printing.jpg",
+		alt: "Screen printing station preparing custom garment artwork",
+		items: ["Event shirts", "School promotions", "Corporate campaigns", "Reunion apparel"]
+	},
+	{
+		name: "Uniform Program Management",
+		desc: "Structured production and reorder workflow for organizations that need consistency across teams.",
+		image: "/images/service-uniforms.jpg",
+		alt: "Rack of custom uniforms prepared for delivery",
+		items: ["Sizing standards", "Brand controls", "Repeat order flow", "Delivery coordination"]
+	}
+];
+
+const process = [
+	{
+		step: "01",
+		title: "Discovery and Scope",
+		text: "We gather quantity, garment type, branding specs, and timeline expectations."
+	},
+	{
+		step: "02",
+		title: "Artwork and Sample",
+		text: "Mockups are approved and sample pieces are validated before production."
+	},
+	{
+		step: "03",
+		title: "Production",
+		text: "Embroidery and printing run with quality checkpoints for finish consistency."
+	},
+	{
+		step: "04",
+		title: "Delivery and Reorders",
+		text: "Orders are dispatched and stored for predictable repeat requests."
+	}
+];
+
+const packages = [
+	{
+		name: "Starter Program",
+		bestFor: "Small teams and first-time uniform projects",
+		includes: [
+			"Embroidery or print setup",
+			"Single garment category",
+			"Basic production timeline",
+			"Email support"
+		]
+	},
+	{
+		name: "Growth Program",
+		bestFor: "Schools and businesses with recurring apparel demand",
+		includes: [
+			"Multi-garment production",
+			"Brand and sizing control",
+			"Priority production queue",
+			"Dedicated project contact"
+		]
+	},
+	{
+		name: "Enterprise Program",
+		bestFor: "Multi-site organizations and high-volume operations",
+		includes: [
+			"Advanced uniform planning",
+			"Phased delivery strategy",
+			"Reorder workflow management",
+			"Operational reporting support"
+		]
+	}
+];
+
+const faqs = [
+	{
+		question: "Do you work with both schools and companies?",
+		answer:
+			"Yes. We support schools, corporate teams, event organizers, and reunion programs across Miami."
+	},
+	{
+		question: "Can you handle repeat uniform orders?",
+		answer:
+			"Yes. We create repeatable order structures with standardized branding and sizing references."
+	},
+	{
+		question: "What decoration methods do you provide?",
+		answer:
+			"We currently provide embroidery and screen printing based on garment type and use case."
+	},
+	{
+		question: "How do we start a quote?",
+		answer:
+			"Share your quantities, garment types, and timeline in our contact page. We respond with next-step scope."
+	}
+];
+---
+
+<Layout
+	title="Services"
+	description="English-first service pages focused on Miami, Florida demand for uniforms, embroidery, and custom printing."
+	canonical="/servicios"
+>
+	<section class="section-shell page-hero">
+		<p class="eyebrow">Services</p>
+		<h1 class="page-title mt-2">Embroidery and printing services for Miami organizations.</h1>
+		<p class="page-subtitle">
+			From school promotions to corporate uniform programs, Rosillo Tex delivers custom apparel
+			production with quality controls, timeline clarity, and repeat-order readiness.
+		</p>
+		<div class="mt-6 flex flex-wrap gap-2 text-xs">
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				Miami, Florida
+			</span>
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				English-first content
+			</span>
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				B2B-focused delivery
+			</span>
+		</div>
+	</section>
+
+	<section class="grid-cards-3 mt-8">
+		{
+			coreServices.map((service) => (
+				<article class="content-card overflow-hidden p-0">
+					<img class="service-media" src={service.image} alt={service.alt} loading="lazy" decoding="async" />
+					<div class="p-6">
+					<h2 class="text-2xl">{service.name}</h2>
+					<p class="mt-3 text-sm leading-relaxed">{service.desc}</p>
+						<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-[var(--ink-700)]">
+							{service.items.map((item) => <li>{item}</li>)}
+						</ul>
+					</div>
+				</article>
+			))
+		}
+	</section>
+
+	<section class="section-shell section-muted mt-10 p-8 md:p-12">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">Workflow</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">How service delivery works</h2>
+			<p class="mt-3 text-sm text-[var(--ink-700)] md:text-base">
+				A simple process designed to reduce friction from first quote to final delivery.
+			</p>
+		</div>
+		<div class="grid-cards-2 mt-8">
+			{
+				process.map((item) => (
+					<article class="content-card">
+						<p class="icon-dot" aria-hidden="true">{item.step}</p>
+						<h3 class="mt-3 text-2xl">{item.title}</h3>
+						<p class="mt-2 text-sm leading-relaxed">{item.text}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">Programs</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Service models by team size</h2>
+			<p class="mt-3 text-sm text-[var(--ink-700)] md:text-base">
+				Choose the service structure that best fits your current operation and growth stage.
+			</p>
+		</div>
+		<div class="grid-cards-3 mt-8">
+			{
+				packages.map((pack) => (
+					<article class="content-card">
+						<p class="eyebrow text-[var(--brand-700)]">{pack.name}</p>
+						<p class="mt-3 text-sm text-[var(--ink-700)]">{pack.bestFor}</p>
+						<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-[var(--ink-700)]">
+							{pack.includes.map((item) => <li>{item}</li>)}
+						</ul>
+						<a href="/contacto" class="btn-secondary mt-6">Request details</a>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">FAQ</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Common service questions</h2>
+		</div>
+		<div class="grid-cards-2 mt-8">
+			{
+				faqs.map((faq) => (
+					<article class="content-card">
+						<h3 class="text-2xl">{faq.question}</h3>
+						<p class="mt-3 text-sm leading-relaxed">{faq.answer}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="section-shell section-inverse mt-10 p-8 text-center md:p-12">
+		<h2 class="text-4xl text-white">Need a quote for your team?</h2>
+		<p class="mx-auto mt-3 max-w-2xl text-sm text-[#d7e8fb] md:text-base">
+			Tell us your project scope and timeline. We will recommend the best embroidery or printing
+			service model for your organization.
+		</p>
+		<a href="/contacto" class="btn-primary mt-6">Start your quote</a>
+	</section>
+</Layout>

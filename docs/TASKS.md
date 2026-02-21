@@ -16,12 +16,12 @@
 - [ ] Definir dominios finales y proveedor DNS/CDN.
 - [ ] Provisionar WordPress en `cms`.
 - [ ] Endurecer seguridad base de WordPress (MFA, roles, backups).
-- [ ] Inicializar proyecto Astro 6 + TypeScript.
-- [ ] Configurar Tailwind + sistema de tokens.
-- [ ] Definir layout base y componentes globales (header, footer, CTA).
-- [ ] Crear integración Astro -> WordPress REST API.
-- [ ] Crear páginas MVP: Home, Servicios, Industrias, Contacto.
-- [ ] Implementar listado y detalle de blog desde WordPress.
+- [x] Inicializar proyecto Astro 6 + TypeScript.
+- [x] Configurar Tailwind + sistema de tokens.
+- [x] Definir layout base y componentes globales (header, footer, CTA).
+- [x] Crear integración Astro -> WordPress REST API.
+- [x] Crear páginas MVP: Home, Servicios, Industrias, Contacto.
+- [x] Implementar listado y detalle de blog desde WordPress.
 - [ ] Configurar sitemap, robots, canonical y OG tags.
 - [ ] Configurar formulario de contacto con tracking de conversiones.
 - [ ] Configurar CI con lint/build en pull requests.
@@ -59,3 +59,11 @@
 - QA funcional validado.
 - Métricas y tracking verificados.
 - Documentación mínima actualizada.
+
+
+## Baseline de contenido (actualizado 2026-02-21)
+
+- [x] Definir baseline de idioma inicial en ingles para todo el sitio.
+- [x] Definir enfoque geografico inicial en Miami, Florida.
+- [ ] Crear brief SEO para clusters locales: school promotions, uniforms, events, reunions, embroidery, screen printing.
+- [ ] Publicar primeras piezas de contenido en ingles orientadas a intencion local de Miami.

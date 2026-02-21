@@ -1,0 +1,205 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const industries = [
+	{
+		name: "K-12 Schools and Academies",
+		summary:
+			"Spirit wear, staff uniforms, class apparel, and seasonal campaigns for school communities.",
+		image: "/images/industries/k12.jpg",
+		alt: "Students in classroom environment",
+		highlights: [
+			"School branding consistency",
+			"Campaign and fundraiser apparel",
+			"Faculty and staff uniform sets"
+		]
+	},
+	{
+		name: "Institutes and Technical Schools",
+		summary:
+			"Program-based uniforms and branded garments for technical and vocational institutions.",
+		image: "/images/industries/institute.jpg",
+		alt: "Technical institute learning environment",
+		highlights: [
+			"Program-level apparel lines",
+			"Durable decoration methods",
+			"Repeat order planning"
+		]
+	},
+	{
+		name: "Colleges and Universities",
+		summary:
+			"Custom uniforms and branded apparel for departments, athletics, clubs, and campus events.",
+		image: "/images/industries/university.jpg",
+		alt: "University campus and students",
+		highlights: [
+			"Department and club programs",
+			"Campus event merchandise",
+			"Alumni and reunion apparel"
+		]
+	},
+	{
+		name: "Small and Mid-Size Businesses",
+		summary:
+			"Professional team uniforms and branded apparel for service operations and growing companies.",
+		image: "/images/industries/business.jpg",
+		alt: "Small business team in office setting",
+		highlights: [
+			"Employee uniform standardization",
+			"Role-based garment options",
+			"Fast reorder cadence"
+		]
+	},
+	{
+		name: "Corporate and Multi-Site Teams",
+		summary:
+			"Structured uniform programs for corporations that need consistency across locations.",
+		image: "/images/industries/corporate.jpg",
+		alt: "Corporate team collaboration in office",
+		highlights: [
+			"Brand control across sites",
+			"Phased delivery coordination",
+			"High-volume production planning"
+		]
+	},
+	{
+		name: "Events, Reunions, and Community Groups",
+		summary:
+			"Custom event shirts and commemorative apparel for reunions, campaigns, and local activations.",
+		image: "/images/industries/events.jpg",
+		alt: "Community event group activity",
+		highlights: [
+			"Event apparel kits",
+			"Deadline-driven production",
+			"Group and organizer support"
+		]
+	}
+];
+
+const deliveryModel = [
+	{
+		title: "Procurement-ready quoting",
+		text: "Clear estimates with quantity tiers, garment options, and decoration recommendations."
+	},
+	{
+		title: "Brand and artwork control",
+		text: "Logo usage, sizing rules, and finish standards validated before production."
+	},
+	{
+		title: "Timeline checkpoints",
+		text: "Milestone-based delivery windows for campaigns, semester starts, and corporate events."
+	},
+	{
+		title: "Repeat-order continuity",
+		text: "Previous job references and production notes retained for faster reorders."
+	}
+];
+
+const faq = [
+	{
+		question: "Do you handle educational institutions and universities?",
+		answer:
+			"Yes. We work with K-12 schools, institutes, colleges, and universities for uniforms and promotional apparel."
+	},
+	{
+		question: "Can you support both small businesses and large corporations?",
+		answer:
+			"Yes. We support small teams and multi-site corporate operations with scalable production workflows."
+	},
+	{
+		question: "What if we need recurring orders throughout the year?",
+		answer:
+			"We build repeat-order structures to keep branding, sizing, and quality consistent across cycles."
+	}
+];
+---
+
+<Layout
+	title="Industries"
+	description="Industries served in Miami, Florida for custom uniforms, embroidery, and screen printing."
+	canonical="/industries"
+>
+	<section class="section-shell page-hero">
+		<p class="eyebrow">Industries</p>
+		<h1 class="page-title mt-2">Industries we serve across Miami, Florida.</h1>
+		<p class="page-subtitle">
+			We support schools, institutes, universities, businesses, and corporations with embroidery and
+			screen printing programs built for consistency and operational reliability.
+		</p>
+		<div class="mt-6 flex flex-wrap gap-2 text-xs">
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				K-12 and higher education
+			</span>
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				Business and corporate teams
+			</span>
+			<span class="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-[var(--ink-700)]">
+				Events and reunions
+			</span>
+		</div>
+	</section>
+
+	<section class="grid-cards-3 mt-8">
+		{
+			industries.map((item) => (
+				<article class="content-card overflow-hidden p-0">
+					<img class="service-media" src={item.image} alt={item.alt} loading="lazy" decoding="async" />
+					<div class="p-6">
+						<h2 class="text-2xl">{item.name}</h2>
+						<p class="mt-3 text-sm leading-relaxed">{item.summary}</p>
+						<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-[var(--ink-700)]">
+							{item.highlights.map((point) => <li>{point}</li>)}
+						</ul>
+					</div>
+				</article>
+			))
+		}
+	</section>
+
+	<section class="section-shell section-muted mt-10 p-8 md:p-12">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">Delivery model</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Operational standards for each industry</h2>
+			<p class="mt-3 text-sm text-[var(--ink-700)] md:text-base">
+				Each account follows a structured model so quality and timelines remain predictable.
+			</p>
+		</div>
+		<div class="grid-cards-2 mt-8">
+			{
+				deliveryModel.map((item, index) => (
+					<article class="content-card">
+						<p class="icon-dot" aria-hidden="true">{String(index + 1).padStart(2, "0")}</p>
+						<h3 class="mt-3 text-2xl">{item.title}</h3>
+						<p class="mt-2 text-sm leading-relaxed">{item.text}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">FAQ</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Industry coverage questions</h2>
+		</div>
+		<div class="grid-cards-3 mt-8">
+			{
+				faq.map((item) => (
+					<article class="content-card">
+						<h3 class="text-2xl">{item.question}</h3>
+						<p class="mt-3 text-sm leading-relaxed">{item.answer}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="section-shell section-inverse mt-10 p-8 text-center md:p-12">
+		<h2 class="text-4xl text-white">Need an industry-specific uniform plan?</h2>
+		<p class="mx-auto mt-3 max-w-2xl text-sm text-[#d7e8fb] md:text-base">
+			Share your institution or company requirements and we will propose a production model aligned
+			to your timeline, branding, and volume.
+		</p>
+		<a href="/contacto" class="btn-primary mt-6">Request industry quote</a>
+	</section>
+</Layout>

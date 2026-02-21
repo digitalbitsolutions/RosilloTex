@@ -1,0 +1,216 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const metrics = [
+	{ value: "72h", label: "Sample turnaround" },
+	{ value: "500+", label: "Orders delivered" },
+	{ value: "Miami", label: "Primary market" }
+];
+
+const services = [
+	{
+		title: "Logo Embroidery",
+		text: "Precision embroidery for uniforms, polos, caps, and jackets.",
+		image: "/images/service-embroidery.jpg",
+		alt: "Close-up of embroidery machine stitching logo on fabric"
+	},
+	{
+		title: "Screen Printing",
+		text: "Durable prints for school promotions, company campaigns, and events.",
+		image: "/images/service-printing.jpg",
+		alt: "Screen printing setup preparing custom garment prints"
+	},
+	{
+		title: "Custom Uniform Programs",
+		text: "Consistent uniform production and reorder workflows for growing teams.",
+		image: "/images/service-uniforms.jpg",
+		alt: "Rack of branded uniforms prepared for delivery"
+	}
+];
+
+const process = [
+	"Share project details, quantities, and deadlines.",
+	"Approve mockups, materials, and production specs.",
+	"Receive production updates and final delivery confirmation."
+];
+
+const industries = [
+	"K-12 schools and spirit programs",
+	"Corporate offices and field teams",
+	"Hospitality and service operations",
+	"Corporate events and reunions"
+];
+
+const reasons = [
+	{
+		title: "Premium quality",
+		text: "Production standards designed for repeat B2B orders."
+	},
+	{
+		title: "Full customization",
+		text: "Embroidery and print solutions tailored to your brand."
+	},
+	{
+		title: "Fast turnaround",
+		text: "Reliable timelines for schools, corporate teams, and events."
+	}
+];
+
+const testimonials = [
+	{
+		quote:
+			"Rosillo Tex delivered our staff uniforms on time and the embroidery quality was excellent.",
+		author: "James R.",
+		role: "Operations Manager"
+	},
+	{
+		quote:
+			"Our school campaign shirts looked great and the team handled revisions quickly and clearly.",
+		author: "Susan M.",
+		role: "School Coordinator"
+	},
+	{
+		quote:
+			"Excellent support for our corporate event apparel. Fast communication and clean finish.",
+		author: "Carlos D.",
+		role: "Event Organizer"
+	}
+];
+---
+
+<Layout
+	title="High-Quality Custom Corporate Uniforms"
+	description="Rosillo Tex provides embroidery and screen printing services in Miami, Florida for schools, businesses, and corporate events."
+	canonical="/"
+>
+	<section class="hero-shell hero-bleed -mt-8 md:-mt-12">
+		<img
+			class="hero-media"
+			src="/images/hero.webp"
+			alt="Rosillo Tex team wearing branded corporate uniforms"
+			loading="eager"
+			fetchpriority="high"
+		/>
+		<div class="hero-content mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-28">
+			<div class="max-w-2xl">
+				<p class="eyebrow text-[#bfd8f3]">Miami, Florida</p>
+				<h1 class="mt-3 text-4xl leading-tight md:text-7xl">
+					High-Quality Custom Corporate Uniforms
+				</h1>
+				<p class="mt-4 max-w-xl text-base leading-relaxed text-[#e3edf8] md:text-lg">
+					Embroidery and printing services for your company apparel. Serving Miami businesses,
+					schools, corporate events, and reunion programs.
+				</p>
+				<div class="mt-7 flex flex-wrap gap-3">
+					<a href="/contacto" class="btn-primary">Get a Quote</a>
+					<a href="/servicios" class="btn-ghost">Our Services</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="metric-grid mt-6">
+		{
+			metrics.map((item) => (
+				<article class="metric-card">
+					<p class="metric-value">{item.value}</p>
+					<p class="metric-label">{item.label}</p>
+				</article>
+			))
+		}
+	</section>
+
+	<section class="surface-panel -mx-4 mt-10 px-4 py-14 md:-mx-8 md:px-8">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">What we do</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Embroidery and printing for business apparel</h2>
+			<p class="mt-3 text-sm text-[var(--ink-700)] md:text-base">
+				From school promotions to corporate uniforms, we provide end-to-end custom apparel services.
+			</p>
+		</div>
+		<div class="grid-cards-3 mt-8">
+			{
+				services.map((service) => (
+					<article class="content-card overflow-hidden p-0">
+						<img
+							class="service-media"
+							src={service.image}
+							alt={service.alt}
+							loading="lazy"
+							decoding="async"
+						/>
+						<div class="p-5">
+							<h3 class="text-xl text-[var(--ink-900)]">{service.title}</h3>
+							<p class="mt-2 text-sm text-[var(--ink-700)]">{service.text}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="grid-cards-2 mt-10">
+		<article class="content-card">
+			<p class="eyebrow">How we work</p>
+			<h2 class="mt-2 text-3xl">Simple production workflow from quote to delivery</h2>
+			<ol class="content-card-list mt-4 list-decimal">
+				{process.map((step) => <li>{step}</li>)}
+			</ol>
+		</article>
+		<article class="content-card">
+			<p class="eyebrow">Industries</p>
+			<h2 class="mt-2 text-3xl">Built for teams that need consistency</h2>
+			<ul class="content-card-list mt-4 list-disc">
+				{industries.map((item) => <li>{item}</li>)}
+			</ul>
+			<a class="btn-secondary mt-6" href="/industries">View industries</a>
+		</article>
+	</section>
+
+	<section class="section-shell section-muted mt-10 p-8 md:p-12">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">Why choose us</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">Trusted by teams across Miami</h2>
+			<p class="mt-3 text-sm text-[var(--ink-700)] md:text-base">
+				Reliable quality, clear communication, and production workflows built for repeat orders.
+			</p>
+		</div>
+		<div class="grid-cards-3 mt-8">
+			{
+				reasons.map((reason) => (
+					<article class="content-card text-center">
+						<p class="icon-dot mx-auto" aria-hidden="true">OK</p>
+						<h3 class="mt-3 text-xl text-[var(--ink-900)]">{reason.title}</h3>
+						<p class="mt-2 text-sm text-[var(--ink-700)]">{reason.text}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow">Testimonials</p>
+			<h2 class="mt-2 text-4xl text-[var(--ink-900)]">What our clients say</h2>
+		</div>
+		<div class="grid-cards-3 mt-8">
+			{
+				testimonials.map((item) => (
+					<article class="content-card">
+						<p class="text-sm leading-relaxed text-[var(--ink-700)]">"{item.quote}"</p>
+						<p class="mt-4 text-sm font-semibold text-[var(--ink-900)]">{item.author}</p>
+						<p class="text-xs text-[var(--ink-500)]">{item.role}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="section-shell section-inverse mt-10 p-8 text-center md:p-12">
+		<h2 class="text-4xl text-white">Ready to outfit your team?</h2>
+		<p class="mx-auto mt-3 max-w-2xl text-sm text-[#d7e8fb] md:text-base">
+			Get a quote for uniforms, embroidery, and screen printing projects in Miami, Florida.
+		</p>
+		<a href="/contacto" class="btn-primary mt-6">Contact us today</a>
+	</section>
+</Layout>

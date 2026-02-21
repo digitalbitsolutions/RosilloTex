@@ -91,3 +91,14 @@ Entregables:
 - A/B testing de páginas clave.
 - Reportes de margen por línea de producto.
 - Mejoras continuas de UX y performance.
+
+## Market Localization Notes (2026-02-21)
+
+- Fase 1 debe salir con contenido en ingles.
+- Fase 1 debe priorizar conversion local en Miami, Florida.
+- Entregables de Fase 1 deben incluir copy base para:
+  - school promotions,
+  - school/corporate uniforms,
+  - corporate events,
+  - reunions,
+  - embroidery and screen printing.

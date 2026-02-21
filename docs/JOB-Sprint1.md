@@ -54,3 +54,9 @@ Implementar la base tecnica del frontend en Astro y conectarlo al WordPress loca
 - No preguntas interactivas.
 - No modificar secretos.
 - Mantener cambios dentro de este repositorio.
+
+## 8. Content Localization Constraints (added 2026-02-21)
+
+- Contenido inicial en ingles.
+- Copy orientado a mercado local de Miami, Florida.
+- Priorizar oferta para school promotions, uniforms, corporate events, reunions, embroidery, and screen printing.

@@ -1,0 +1,48 @@
+---
+import { formatPostDate, truncate } from "../../lib/format";
+import { getRecentPosts, toPlainText, type WpPost } from "../../lib/wp";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+	try {
+		const posts = await getRecentPosts(50);
+		return posts.map((post) => ({
+			params: { slug: post.slug },
+			props: { post }
+		}));
+	} catch {
+		return [];
+	}
+}
+
+interface Props {
+	post?: WpPost;
+}
+
+const { post } = Astro.props as Props;
+
+const title = post ? toPlainText(post.title.rendered) : "Article unavailable";
+const description = post
+	? truncate(toPlainText(post.excerpt.rendered || post.content.rendered), 160)
+	: "This article could not be loaded from the CMS.";
+---
+
+<Layout title={title} description={description} canonical={post ? `/blog/${post.slug}` : "/blog"}>
+	{
+		post ? (
+			<article class="section-shell page-hero">
+				<p class="blog-meta">{formatPostDate(post.date)}</p>
+				<h1 class="page-title mt-2">{toPlainText(post.title.rendered)}</h1>
+				<div class="prose-content mt-6" set:html={post.content.rendered} />
+			</article>
+		) : (
+			<section class="section-shell page-hero">
+				<h1 class="page-title">Article unavailable</h1>
+				<p class="page-subtitle">
+					The post could not be loaded from WordPress at build time.
+				</p>
+				<a href="/blog" class="btn-primary mt-6">Back to blog</a>
+			</section>
+		)
+	}
+</Layout>

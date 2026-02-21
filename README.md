@@ -28,6 +28,9 @@ Este repositorio arranca con blueprint + plan operativo para construir:
 ## Estructura
 
 - `docs/BLUEPRINT.md`: arquitectura objetivo.
+- `docs/PRD.md`: product requirements document inicial.
+- `docs/DESIGN-SYSTEM.md`: design tokens y reglas globales de UI.
+- `docs/PR-CHECKLIST.md`: checklist de calidad para PR (UI, WCAG, SEO, QA).
 - `docs/ROADMAP.md`: roadmap por fases.
 - `docs/TASKS.md`: backlog inicial.
 - `docs/MCP.md`: estrategia MCP.
@@ -76,6 +79,9 @@ Copy-Item docker/.env.example docker/.env
 ## Documentacion clave
 
 - Blueprint tecnico: `docs/BLUEPRINT.md`
+- PRD inicial: `docs/PRD.md`
+- Design system: `docs/DESIGN-SYSTEM.md`
+- PR checklist: `docs/PR-CHECKLIST.md`
 - Setup local: `docs/LOCAL-SETUP.md`
 - Backlog operativo: `docs/TASKS.md`
 - Reentrada rapida: `docs/START-HERE.md`

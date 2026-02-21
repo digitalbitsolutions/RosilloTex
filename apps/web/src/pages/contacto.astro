@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Contact"
+	description="Request custom embroidery and screen printing in Miami, Florida for schools, businesses, and events."
+	canonical="/contacto"
+>
+	<section class="section-shell page-hero">
+		<p class="eyebrow">Contact</p>
+		<h1 class="page-title mt-2">Request your Miami custom apparel quote.</h1>
+		<p class="page-subtitle">
+			Share your school promotion, uniform, corporate event, or reunion requirements. This form
+			will connect to CRM and conversion tracking in the next sprint step.
+		</p>
+	</section>
+
+	<section class="mt-6 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+		<form class="section-shell form-shell p-6">
+			<label class="field-label">
+				Company
+				<input class="field-control" type="text" placeholder="Your company name" />
+			</label>
+			<label class="field-label">
+				Work email
+				<input class="field-control" type="email" placeholder="name@company.com" />
+			</label>
+			<label class="field-label">
+				Estimated order size
+				<select class="field-control">
+					<option>50 - 100 pieces</option>
+					<option>101 - 300 pieces</option>
+					<option>300+ pieces</option>
+				</select>
+			</label>
+			<label class="field-label">
+				Notes
+				<textarea class="field-control min-h-28" placeholder="Tell us about your project"></textarea>
+			</label>
+			<button type="button" class="btn-primary w-fit">
+				Send request
+			</button>
+		</form>
+
+		<aside class="content-card">
+			<h2 class="text-2xl">Commercial desk</h2>
+			<p class="mt-3 text-sm">Email: sales@rosillotex.com</p>
+			<p class="mt-2 text-sm">Phone: +1 (305) 000-0000</p>
+			<p class="mt-4 text-sm">
+				Typical response time: 1 business day with first quote and scope outline.
+			</p>
+		</aside>
+	</section>
+</Layout>

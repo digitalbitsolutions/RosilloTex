@@ -1,0 +1,41 @@
+---
+const links = [
+	{ href: "/", label: "Home" },
+	{ href: "/servicios", label: "Services" },
+	{ href: "/industries", label: "Industries" },
+	{ href: "/blog", label: "Blog" },
+	{ href: "/contacto", label: "Contact" }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-white/98 backdrop-blur">
+	<div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-8">
+		<a href="/" class="font-heading text-lg font-semibold tracking-tight text-[var(--ink-900)] md:text-xl">
+			Rosillo<span class="text-[var(--brand-600)]">Tex</span>
+		</a>
+		<nav class="flex items-center gap-1 overflow-x-auto text-xs md:gap-2 md:text-sm">
+			{
+				links.map((item) => {
+					const isActive =
+						currentPath === item.href ||
+						(item.href !== "/" && currentPath.startsWith(item.href));
+
+					return (
+						<a
+							href={item.href}
+							class:list={[
+								"nav-link whitespace-nowrap",
+								isActive ? "nav-link-active" : ""
+							]}
+						>
+							{item.label}
+						</a>
+					);
+				})
+			}
+		</nav>
+		<a class="btn-primary hidden whitespace-nowrap md:inline-flex" href="/contacto">Get a Quote</a>
+	</div>
+</header>

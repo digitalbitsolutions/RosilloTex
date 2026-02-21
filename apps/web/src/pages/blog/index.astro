@@ -1,0 +1,65 @@
+---
+import { formatPostDate, truncate } from "../../lib/format";
+import { getRecentPosts, toPlainText } from "../../lib/wp";
+import Layout from "../../layouts/Layout.astro";
+
+let posts = [];
+let errorMessage = "";
+
+try {
+	posts = await getRecentPosts(12);
+} catch (error) {
+	errorMessage = error instanceof Error ? error.message : "Could not load blog posts.";
+}
+---
+
+<Layout
+	title="Blog"
+	description="English content strategy for Miami, Florida custom uniforms, embroidery, and screen printing."
+	canonical="/blog"
+>
+	<section class="section-shell page-hero">
+		<p class="eyebrow">Headless blog</p>
+		<h1 class="page-title mt-2">Miami-focused content feed from WordPress.</h1>
+		<p class="page-subtitle">
+			Posts should launch in English and prioritize local-intent topics for schools, businesses,
+			corporate events, and reunions in Miami, Florida.
+		</p>
+	</section>
+
+	{
+		errorMessage ? (
+			<section class="content-card mt-6">
+				<h2 class="text-2xl">Blog is temporarily unavailable</h2>
+				<p class="mt-3 text-sm">{errorMessage}</p>
+				<p class="mt-2 text-sm">
+					Check if WordPress is running at <code>http://localhost:18080</code> and retry.
+				</p>
+			</section>
+		) : posts.length === 0 ? (
+			<section class="content-card mt-6">
+				<h2 class="text-2xl">No posts yet</h2>
+				<p class="mt-3 text-sm">
+					Create and publish posts in WordPress to populate this listing.
+				</p>
+			</section>
+		) : (
+			<ul class="grid-cards-2 mt-6">
+				{
+					posts.map((post) => (
+						<li class="blog-card">
+							<p class="blog-meta">{formatPostDate(post.date)}</p>
+							<h2 class="mt-3 text-2xl leading-tight text-[var(--ink-900)]">
+								<a class="link-inline" href={`/blog/${post.slug}`}>{toPlainText(post.title.rendered)}</a>
+							</h2>
+							<p class="mt-3 text-sm text-[var(--ink-700)]">
+								{truncate(toPlainText(post.excerpt.rendered), 180)}
+							</p>
+							<a href={`/blog/${post.slug}`} class="btn-secondary mt-5">Read article</a>
+						</li>
+					))
+				}
+			</ul>
+		)
+	}
+</Layout>

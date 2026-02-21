@@ -142,3 +142,16 @@ Prácticas:
   - Mailpit (`localhost:8025`)
 
 Con este esquema, el backend se mantiene aislado y reproducible, sin bloquear el flujo de desarrollo del frontend.
+
+## 11. Content and Market Baseline (2026-02-21)
+
+- Initial website language: English.
+- Primary launch market: Miami, Florida.
+- Core offer to highlight in Home, Services, Industries, Contact, and Blog:
+  - School promotions and spirit wear.
+  - School and corporate uniforms.
+  - Corporate event apparel.
+  - Reunion apparel.
+  - Embroidery and screen-printing services.
+- Core positioning statement: custom apparel manufacturing for organizations, teams, and events.
+- Local SEO baseline (Miami): include city/state intent in key transactional pages and blog clusters.
